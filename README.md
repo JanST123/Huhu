@@ -23,4 +23,4 @@ You'll find a guide, how to set up the backend on your dev-machine, here later. 
 (i.e. if you whish to develop the frontend), you can use it on http://we-hu.hu/api/.
 You will also find a complete API-Documentation here later.
 
-The **Frontend** is located in the "Huhu-Frontend" repository here on github.
+The **Frontend** is located in the "[https://github.com/JanST123/Huhu_Frontend|Huhu-Frontend]" repository here on github.
