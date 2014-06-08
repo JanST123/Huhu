@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+  <parser>
+    <target>api/docs</target>
+  </parser>
+  <transformer>
+    <target>api/docs</target>
+  </transformer>
+  <files>
+    <directory>application</directory>
+    <directory>library</directory>
+    <ignore>*.phtml</ignore>
+  </files>
+</phpdoc>

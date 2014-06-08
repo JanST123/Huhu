@@ -1,0 +1,19 @@
+{
+    "name": "JanST123/Huhu",
+    "autoload": {
+        "psr-0": {
+            "Huhu": "server/src"
+        }
+    },
+    "require": {
+        "zendframework/zendframework1": "1.*",
+        "cboden/ratchet": "0.3.*",
+        "react/zmq": "0.2.*"
+    },
+    "authors": [
+        {
+            "name": "Jan Stuhlmann",
+            "email": "jstuhlmann@gmail.com"
+        }
+    ]
+}

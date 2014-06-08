@@ -1,0 +1,7 @@
+<?php 
+foreach ($this->lines as $line) {
+	array_walk($line, function(&$val) {
+		$val=str_replace(';', ',', $val);
+	});
+	echo implode(';', $line)."\n";
+} 

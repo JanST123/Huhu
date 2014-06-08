@@ -1,0 +1,79 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:        huhu_server
+# Short-Description: Start Huhu Websocket Server
+### END INIT INFO
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+. /lib/lsb/init-functions
+
+DAEMON=/usr/bin/php
+PIDFILE=/var/www/web18/huhu_server.pid
+PHPSCRIPT="/var/www/web18/dev/server/bin/start.php $PIDFILE"
+
+
+test -x $DAEMON || exit 5
+
+
+LOCKFILE=/var/lock/huhu_server
+
+lock_huhu() {
+	if [ -x /usr/bin/lockfile-create ]; then
+		lockfile-create $LOCKFILE
+		lockfile-touch $LOCKFILE &
+		LOCKTOUCHPID="$!"
+	fi
+}
+
+unlock_huhu() {
+	if [ -x /usr/bin/lockfile-create ] ; then
+		kill $LOCKTOUCHPID
+		lockfile-remove $LOCKFILE
+	fi
+}
+
+RUNASUSER=web18
+
+case $1 in
+	start)
+		log_daemon_msg "Starting Huhu Server"
+		
+		lock_huhu
+
+		start-stop-daemon --start --quiet --background --oknodo --chuid $RUNASUSER --pidfile $PIDFILE --startas $DAEMON $PHPSCRIPT 
+		
+		log_daemon_msg "start"
+
+		status=$?
+		unlock_huhu
+		log_end_msg $status
+  		;;
+	stop)
+		log_daemon_msg "Stopping Huhu Server"
+  		start-stop-daemon --stop --quiet --oknodo --pidfile $PIDFILE
+		log_end_msg $?
+		rm -f $PIDFILE
+  		;;
+	restart|force-reload)
+		$0 stop && sleep 2 && $0 start
+  		;;
+	try-restart)
+		if $0 status >/dev/null; then
+			$0 restart
+		else
+			exit 0
+		fi
+		;;
+	reload)
+		exit 3
+		;;
+	status)
+		status_of_proc $DAEMON "Huhu Server"
+		;;
+	*)
+		echo "Usage: $0 {start|stop|restart|try-restart|force-reload|status}"
+		exit 2
+		;;
+esac

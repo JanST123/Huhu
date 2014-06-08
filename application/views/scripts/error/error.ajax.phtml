@@ -1,0 +1,9 @@
+<?php 
+echo json_encode(
+	Array(
+		'success' => false,
+		'needsLogin' => ($this->exception instanceOf \Huhu\Library\Auth\Exception?true:false),
+		'message' => $this->exception->getMessage(),
+		'trace' => (APPLICATION_ENV!='production'?$this->exception->getTraceAsString():''),
+	)
+);

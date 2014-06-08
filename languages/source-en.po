@@ -1,0 +1,305 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Huhu\n"
+"POT-Creation-Date: 2014-05-04 19:41+0100\n"
+"PO-Revision-Date: 2014-05-05 11:01+0100\n"
+"Last-Translator: \n"
+"Language-Team: Jan <jstuhlmann@gmail.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ../application\n"
+"X-Poedit-SearchPath-1: ../library\n"
+
+#: ../application/controllers/UserController.php:85
+#: ../application/controllers/UserController.php:114
+msgid "Unknown error"
+msgstr "Unknown error"
+
+#: ../application/controllers/UserController.php:125
+msgid "Please provide user AND password"
+msgstr "Please provide user AND password"
+
+#: ../application/controllers/UserController.php:192
+msgid "Login successful."
+msgstr "Login successful."
+
+#: ../application/controllers/UserController.php:209
+#: ../library/DT/Auth/Exception.php:14
+msgid "Please login"
+msgstr "Please login"
+
+#: ../application/controllers/UserController.php:216
+#: ../application/controllers/UserController.php:221
+msgid "User does not exist or the password is incorrect."
+msgstr "User does not exist or the password is incorrect."
+
+#: ../application/controllers/UserController.php:336
+msgid "User not on your contactlist or not accepted yet."
+msgstr "User not on your contactlist or not accepted yet."
+
+#: ../application/controllers/UserController.php:359
+msgid "No public key available"
+msgstr "No public key available"
+
+#: ../application/controllers/UserController.php:447
+msgid "Password must be at least 8 characters long"
+msgstr "Password must be at least 8 characters long"
+
+#: ../application/controllers/UserController.php:451
+msgid "Passwords don't match."
+msgstr "Passwords don't match."
+
+#: ../application/controllers/UserController.php:460
+#: ../application/controllers/UserController.php:630
+msgid "No valid e-mail address given (is needed for password recovery!)."
+msgstr "No valid e-mail address given (is needed for password recovery!)."
+
+#: ../application/controllers/UserController.php:505
+msgid ""
+"Unfortunately this username already exists..<br />How about this user names "
+"which are currently available?"
+msgstr ""
+"Unfortunately this username already exists..<br />How about this user names "
+"which are currently available?"
+
+#: ../application/controllers/UserController.php:566
+#, php-format
+msgid "Welcome %s"
+msgstr "Welcome %s"
+
+#: ../application/controllers/UserController.php:615
+msgid "The password must be at least 8 characters long."
+msgstr "The password must be at least 8 characters long."
+
+#: ../application/controllers/UserController.php:619
+msgid "The passwords don't match."
+msgstr "The passwords don't match."
+
+#: ../application/controllers/UserController.php:649
+msgid "The old password is not correct."
+msgstr "The old password is not correct."
+
+#: ../application/controllers/UserController.php:744
+msgid "Successfully saved."
+msgstr "Successfully saved."
+
+#: ../application/controllers/UserController.php:749
+msgid "Save was not completed with errors"
+msgstr "Save was not completed with errors"
+
+#: ../application/controllers/UserController.php:753
+msgid "Username invalid"
+msgstr "Username invalid"
+
+#: ../application/controllers/UserController.php:792
+msgid "Your new password"
+msgstr "Your new password"
+
+#: ../application/controllers/UserController.php:793
+msgid "Hello "
+msgstr "Hello "
+
+#: ../application/controllers/UserController.php:799
+msgid "A new password was created and will be delivered to your email address"
+msgstr "A new password was created and will be delivered to your email address"
+
+#: ../application/controllers/UserController.php:805
+msgid "Username not found"
+msgstr "Username not found"
+
+#: ../application/controllers/UserController.php:884
+msgid "Unknown error."
+msgstr "Unknown error."
+
+#: ../application/controllers/UserController.php:1000
+msgid ""
+"This is not a valid image file. We support all images in the format JPG, PNG "
+"or GIF."
+msgstr ""
+"This is not a valid image file. We support all images in the format JPG, PNG "
+"or GIF."
+
+#: ../application/controllers/UserController.php:1009
+msgid ""
+"The image is corrupted or in a wrong format. We support all images in the "
+"format JPG, PNG or GIF."
+msgstr ""
+"The image is corrupted or in a wrong format. We support all images in the "
+"format JPG, PNG or GIF."
+
+#: ../application/controllers/UserController.php:1033
+msgid "Upload failed"
+msgstr "Upload failed"
+
+#: ../application/controllers/ContactsController.php:159
+#, php-format
+msgid "%s wants to add you to the contact list."
+msgstr "%s wants to add you to the contact list."
+
+#: ../application/controllers/ContactsController.php:165
+#, php-format
+msgid ""
+"The user was added to your contact list, but has to be accepted by %s first."
+msgstr ""
+"The user was added to your contact list, but has to be accepted by %s first."
+
+#: ../application/controllers/ContactsController.php:183
+#, php-format
+msgid "%s has accepted your contact request"
+msgstr "%s has accepted your contact request"
+
+#: ../application/controllers/ContactsController.php:189
+msgid "You now have each other on your contact list."
+msgstr "You now have each other on your contact list."
+
+#: ../application/controllers/ContactsController.php:212
+msgid "The contact request was rejected"
+msgstr "The contact request was rejected"
+
+#: ../application/controllers/ContactsController.php:236
+msgid ""
+"The contact was removed from your contact list, you were also removed from "
+"the contact list of this contact"
+msgstr ""
+"The contact was removed from your contact list, you were also removed from "
+"the contact list of this contact"
+
+#: ../application/controllers/ContactsController.php:253
+msgid "No search criteria given"
+msgstr "No search criteria given"
+
+#: ../application/controllers/ContactsController.php:444
+#, php-format
+msgid "Found %d results"
+msgstr "Found %d results"
+
+#: ../application/controllers/ChatController.php:77 ../library/DT/Chat.php:281
+#: ../library/DT/Chat.php:599
+msgid "Chat with"
+msgstr "Chat with"
+
+#: ../application/controllers/ChatController.php:97
+msgid " has started a chat with you"
+msgstr " has started a chat with you"
+
+#: ../application/controllers/ChatController.php:99
+#, php-format
+msgid " has started a chat with you and %d others"
+msgstr " has started a chat with you and %d others"
+
+#: ../application/controllers/ChatController.php:120
+msgid ""
+"Chat with this user can't be opened, probably he didnt't accept your contact "
+"yet."
+msgstr ""
+"Chat with this user can't be opened, probably he didnt't accept your contact "
+"yet."
+
+#: ../application/controllers/ChatController.php:161
+msgid "This chat doesn't exist anymore."
+msgstr "This chat doesn't exist anymore."
+
+#: ../application/controllers/ChatController.php:260
+#, php-format
+msgid "%s joined the chat"
+msgstr "%s joined the chat"
+
+#: ../application/controllers/ChatController.php:267
+msgid "User added to chat"
+msgstr "User added to chat"
+
+#: ../application/controllers/ChatController.php:382
+msgid "New message from "
+msgstr "New message from "
+
+#: ../library/DT/Contact.php:43
+msgid "Last online"
+msgstr "Last online"
+
+#: ../library/DT/Contact.php:46
+msgid "Not authorized"
+msgstr "Not authorized"
+
+#: ../library/DT/Contact.php:59
+msgid "Contacts"
+msgstr "Contacts"
+
+#: ../library/DT/Contact.php:99
+msgid "Not yet answered contact request"
+msgstr "Not yet answered contact request"
+
+#: ../library/DT/Contact.php:248
+msgid "City"
+msgstr "City"
+
+#: ../library/DT/Contact.php:249
+msgid "ZIP-Code"
+msgstr "ZIP-Code"
+
+#: ../library/DT/Contact.php:250 ../library/DT/Contact.php:399
+#: ../library/DT/Contact.php:415
+msgid "Age"
+msgstr "Age"
+
+#: ../library/DT/Contact.php:251
+msgid "Birthday"
+msgstr "Birthday"
+
+#: ../library/DT/Contact.php:252
+msgid "Forename"
+msgstr "Forename"
+
+#: ../library/DT/Contact.php:253
+msgid "Surname"
+msgstr "Surname"
+
+#: ../library/DT/Contact.php:254
+msgid "Last school"
+msgstr "Last school"
+
+#: ../library/DT/Contact.php:255
+msgid "Company"
+msgstr "Company"
+
+#: ../library/DT/Contact.php:256
+msgid "Phone no."
+msgstr "Phone no."
+
+#: ../library/DT/Contact.php:257
+msgid "Mobile no."
+msgstr "Mobile no."
+
+#: ../library/DT/Contact.php:258
+msgid "Website"
+msgstr "Website"
+
+#: ../library/DT/Contact.php:259
+msgid "Maiden name"
+msgstr "Maiden name"
+
+#: ../library/DT/Contact.php:399 ../library/DT/Contact.php:415
+msgid "Years"
+msgstr "Years"
+
+#: ../library/DT/User.php:243
+msgid "Offline"
+msgstr "Offline"
+
+#: ../library/DT/User.php:247
+msgid "Online"
+msgstr "Online"
+
+#: ../library/DT/User.php:251
+msgid "Away"
+msgstr "Away"
+
+#: ../library/DT/Pusher/Gcm.php:59
+#, php-format
+msgid "%d new Huhu-Messages"
+msgstr "%d new Huhu-Messages"
