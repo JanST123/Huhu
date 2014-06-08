@@ -1,4 +1,4 @@
-# Huhu . A javascript and php based Messenger
+# Huhu - a javascript and php based Messenger
 
 ## What is Huhu?
 
