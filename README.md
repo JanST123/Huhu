@@ -30,7 +30,7 @@ The **Frontend** is located in the "[Huhu-Frontend](https://github.com/JanST123/
 
 ## The History (and why OpenSource)
 
-I started working on the Huhu project in August of 2013. It was not planned as an open source project, but as an "one-man show" bringing in millions of euro's ;-)
+I started working on the Huhu project in August of 2013. It was not planned as an open source project, but as an alternative to WhatsApp offering more security and possibilities, e.g. use it in a browser and therefore on a normal PC.
 I wasn't in a hurry developing the app and i did it in my sparetime after i came home from my job.
-When Facebook bought WhatsApp.....
+When Facebook bought WhatsApp, alternative messengers started so spring up like mushrooms - some of them with big investors in the background. To the same effect the requirements to a messenger app started to grow, mainly concerning security things.
 
