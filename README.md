@@ -1,5 +1,7 @@
 # Huhu - a javascript and php based Messenger
 
+![image](https://raw.githubusercontent.com/JanST123/Huhu_Frontend/master/icons/icon.png)
+
 ## What is Huhu?
 
 ### What it aims to be
