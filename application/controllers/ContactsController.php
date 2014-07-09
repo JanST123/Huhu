@@ -26,7 +26,7 @@ class ContactsController extends \Huhu\Library\Controller\Action
     /* Initialize action controller here */
     $this->_helper->viewRenderer->setRender('json');
 
-    DT_Auth::auth();
+    \Huhu\Library\Auth::auth();
 
     $this->_validateInput();
 

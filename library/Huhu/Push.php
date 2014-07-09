@@ -173,7 +173,7 @@ class Push
     $tokenUnencrypted=uniqid('WST-'.$currentUser['id'].'-', true);
 
     // encrypt the token
-    $token=base64_encode(mcrypt_encrypt('cast-128', pack('H*', \Huhu\Library\Pusher_Websocket::$key), $tokenUnencrypted, MCRYPT_MODE_CFB, str_pad('0', 8)));
+    $token=base64_encode(mcrypt_encrypt('cast-128', pack('H*', \Huhu\Library\Pusher\Websocket::$key), $tokenUnencrypted, MCRYPT_MODE_CFB, str_pad('0', 8)));
 
 
     // save the token
