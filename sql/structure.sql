@@ -175,7 +175,6 @@ CREATE TABLE IF NOT EXISTS `user_push_auth` (
 
 --
 -- Constraints der exportierten Tabellen
---
 
 --
 -- Constraints der Tabelle `chats`
