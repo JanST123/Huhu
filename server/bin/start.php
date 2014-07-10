@@ -40,7 +40,7 @@ $pull->on('message', Array($server, 'onAPICommand'));
 
 
 $webSock=new React\Socket\Server($loop);
-$webSock->listen(8410, '127.0.0.1');
+$webSock->listen(8400, '127.0.0.1');
 //$webSock->listen(8410, '0.0.0.0');
 
 $webServer=new Ratchet\Server\IoServer(
