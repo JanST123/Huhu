@@ -1,0 +1,47 @@
+[production]
+phpSettings.display_startup_errors = 0
+phpSettings.display_errors = 0
+includePaths.library = APPLICATION_PATH "/../library"
+bootstrap.path = APPLICATION_PATH "/Bootstrap.php"
+bootstrap.class = "Bootstrap"
+appnamespace = "Application"
+resources.frontController.controllerDirectory = APPLICATION_PATH "/controllers"
+resources.frontController.params.displayExceptions = 0
+resources.view[] = 
+
+memcache.backend.servers.0.port=11211
+memcache.backend.servers.0.host="127.0.0.1"
+memcache.backend.servers.0.persistent=1
+
+memcache.frontend.cache_id_prefix="huhu_"
+memcache.frontend.lifetime=86400
+memcache.frontend.automatic_serialization=1
+memcache.frontend.logging=0
+memcache.frontend.automatic_cleaning_factor=0
+
+memcache.frontend_session.cache_id_prefix="huhu_session_"
+memcache.frontend_session.lifetime=1440
+memcache.frontend_session.automatic_serialization=0
+
+database.adapter="Pdo_mysql"
+database.params.host="localhost"
+database.params.username=<DATABASE USERNAME>
+database.params.password=<DATABASE PASSWORD>
+database.params.dbname="huhu"
+
+
+session.remember_me_seconds=86400
+session.strict=1
+
+chat.maxMessagesInStore=20
+
+[staging : production]
+
+[testing : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+
+[development : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+resources.frontController.params.displayExceptions = 1
