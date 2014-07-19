@@ -170,7 +170,7 @@ class ContactsController extends \Huhu\Library\Controller\Action
 
         $this->view->dataJson = Array(
           'success' => true,
-          'message' => sprintf($this->translate->_('The user was added to your contact list, but has to be accepted by %s first.', $contactUser['user'] . ' akzeptiert werden')),
+          'message' => sprintf($this->translate->_('The user was added to your contact list, but has to be accepted by %s first.'), $contactUser['user']),
         );
       }
     }
@@ -265,7 +265,7 @@ class ContactsController extends \Huhu\Library\Controller\Action
       $this->view->dataJson = Array(
         'success' => true,
         'foundcount' => count($results),
-        'message' => sprintf($this->translate('Found %d results'), count($results)),
+        'message' => sprintf($this->translate->_('Found %d results'), count($results)),
         'results' => array_values($results),
       );
     }

@@ -10,8 +10,8 @@ PATH=/sbin:/bin:/usr/sbin:/usr/bin
 . /lib/lsb/init-functions
 
 DAEMON=/usr/bin/php
-PIDFILE=/var/www/web18/huhu_server.pid
-PHPSCRIPT="/var/www/web18/dev/server/bin/start.php $PIDFILE"
+PIDFILE=/tmp/huhu_server.pid
+PHPSCRIPT="/Applications/XAMPP/xamppfiles/htdocs/server/bin/start.php $PIDFILE"
 
 
 test -x $DAEMON || exit 5
@@ -34,7 +34,7 @@ unlock_huhu() {
 	fi
 }
 
-RUNASUSER=web18
+RUNASUSER=jst
 
 case $1 in
 	start)

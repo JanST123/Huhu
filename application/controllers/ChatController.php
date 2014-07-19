@@ -103,7 +103,7 @@ class ChatController extends \Huhu\Library\Controller\Action
 
       $m=$this->translate->_($currentUser['user'] . " has started a chat with you");
       if (count($this->_validatedInput['userids']) > 1) {
-        $m=sprintf($this->translate->_($currentUser['user'] . " has started a chat with you and %d others", count($this->_validatedInput['userids']) - 1));
+        $m=sprintf($this->translate->_($currentUser['user'] . " has started a chat with you and %d others"), count($this->_validatedInput['userids']) - 1);
       }
 
       \Huhu\Library\Push::push(

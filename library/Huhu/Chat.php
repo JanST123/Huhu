@@ -79,7 +79,10 @@ class Chat
     }
 
     $db = \Zend_Registry::get('Zend_Db');
-    $currentUser = \Zend_Registry::get('loggedinuser');
+    $currentUser=null;
+    if ($onlyForCurrentUser) {
+	    $currentUser = \Zend_Registry::get('loggedinuser');
+	}
 
     if ($mcChat === false || !is_array($mcChat)) {
       // load messages from db, create chat in db
@@ -104,7 +107,7 @@ class Chat
       $mcChat[$k]['dateTime'] = $mcChat[$k]['datetime'];
 
       $mcChat[$k]['myself'] = 0;
-      if ($v['user_id'] == $currentUser['id']) {
+      if ($currentUser && $v['user_id'] == $currentUser['id']) {
         $mcChat[$k]['myself'] = 1;
       }
     }
@@ -128,7 +131,7 @@ class Chat
 
 
       if ($lastMessageId === null || $msgIdNum > $lastMessageIdNum) {
-        if (!$onlyForCurrentUser || $msg['recipient_id'] == $currentUser['id']) {
+        if (!$onlyForCurrentUser || ($currentUser && $msg['recipient_id'] == $currentUser['id'])) {
           $return[] = $msg;
         }
       }
@@ -271,7 +274,7 @@ class Chat
   {
     $currentUser = \Zend_Registry::get('loggedinuser');
     $db = \Zend_Registry::get('Zend_Db');
-    $mc = \Zend_Registry::get('\Zend_Cache');
+    $mc = \Zend_Registry::get('Zend_Cache');
     $translate = \Zend_Registry::get('Zend_Translate');
 
     // check if exists and get users

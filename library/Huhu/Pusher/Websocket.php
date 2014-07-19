@@ -55,13 +55,12 @@ class Websocket extends \Huhu\Library\Pusher implements \Huhu\Library\Pusher\Pus
   public function push($data) {
     if (empty($this->_token)) return; // no token, no push
 
-    $loop = React\EventLoop\Factory::create();
+    $loop = \React\EventLoop\Factory::create();
 
-    $context = new React\ZMQ\Context($loop);
+    $context = new \React\ZMQ\Context($loop);
 
-    $push = $context->getSocket(ZMQ::SOCKET_PUSH);
+    $push = $context->getSocket(\ZMQ::SOCKET_PUSH);
     $push->connect('tcp://127.0.0.1:5555');
-
 
     $push->send(
       serialize(

@@ -178,6 +178,6 @@ class Server implements MessageComponentInterface {
    */
   private function _debug($text) {
 //    file_put_contents('/tmp/huhu_server.log', "\n".date('d.m.Y H:i:s')." ".$text);
-//    echo "\n".date('d.m.Y H:i:s')." ".$text;
+    echo "\n".date('d.m.Y H:i:s')." ".$text;
   }
 }

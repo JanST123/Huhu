@@ -5,6 +5,9 @@
  * Updates the last pull timestamps from memcache to db
  */
 
+namespace Huhu;
+
+
 define('IS_CRONJOB', TRUE);
  
 // Define path to application directory
@@ -24,25 +27,35 @@ set_include_path(implode(PATH_SEPARATOR, array(
 require APPLICATION_PATH . '/../vendor/autoload.php';
 
 /** Zend_Bootstap*/
-require_once 'Zend/Loader/Autoloader.php';
-$autoloader=Zend_Loader_Autoloader::getInstance();
-$autoloader->registerNamespace( 'DT_' );
+ini_set('include_path', ini_get('include_path').':'.APPLICATION_PATH.'/../library/DT');
 
-$config=new Zend_Config_Ini(APPLICATION_PATH.'/configs/application.ini', APPLICATION_ENV);
-$db=Zend_Db::factory($config->database);
+require_once 'Zend/Loader/Autoloader.php';
+$autoloader=\Zend_Loader_Autoloader::getInstance();
+$autoloader->registerNamespace( 'DT_' );
+$autoloader->registerNamespace( 'Huhu_' ); // workaround to use PHP Namespaces with the Zend_Autoloader...
+// workaround to use PHP Namespaces with the Zend_Autoloader...
+    $loader = function($className) {
+      $className=str_replace('Huhu\\Library\\', '', $className);
+      $className = str_replace('\\', '_', $className);
+      \Zend_Loader_Autoloader::autoload('Huhu_'.$className);
+    };
+    $autoloader->pushAutoloader($loader, 'Huhu\\Library\\');
+
+$config=new \Zend_Config_Ini(APPLICATION_PATH.'/configs/application.ini', APPLICATION_ENV);
+$db=\Zend_Db::factory($config->database);
 
 $cacheCore=new \Huhu\Library\CacheCore($config->memcache->frontend->toArray());
 
 
-$mc=Zend_Cache::factory($cacheCore,
+$mc=\Zend_Cache::factory($cacheCore,
 		'memcached',
 		$config->memcache->frontend->toArray(),
 		$config->memcache->backend->toArray()
 );
 
-Zend_Registry::set('Zend_Cache', $mc);
-Zend_Registry::set('Zend_Db', $db);
-Zend_Registry::set('Zend_Config', $config);
+\Zend_Registry::set('Zend_Cache', $mc);
+\Zend_Registry::set('Zend_Db', $db);
+\Zend_Registry::set('Zend_Config', $config);
 
 
 
@@ -54,12 +67,12 @@ $res=$db->query("SELECT c.id FROM chats AS c");
 if ($res) {
 	$chats=Array();
 	
-	$rows=$res->fetchAll(Zend_Db::FETCH_ASSOC);
+	$rows=$res->fetchAll(\Zend_Db::FETCH_ASSOC);
 	foreach ($rows as $row) {
 
     // select the last message id
     $res2=$db->query("SELECT message_id FROM chats_messages WHERE fk_chatID = ".(int)$row['id']." ORDER BY message_id DESC LIMIT 1");
-    $row2=$res2->fetch(Zend_Db::FETCH_ASSOC);
+    $row2=$res2->fetch(\Zend_Db::FETCH_ASSOC);
 
 	  $chats[$row['id']]=$row2['message_id'];
 	}
@@ -88,7 +101,7 @@ if ($res) {
 	}
 
   // if we came to here we stored the messages in db successful, so clean up memcache
-  $_maxMessagesInStore=(int)Zend_Registry::get('Zend_Config')->chat->maxMessagesInStore;
+  $_maxMessagesInStore=(int)\Zend_Registry::get('Zend_Config')->chat->maxMessagesInStore;
   foreach ($chats as $chatId => $lastMessageIdInDb) {
     $mcChat=$mc->load(\Huhu\Library\MemcacheManager::getKeyChat($chatId));
     $mcChat = array_slice($mcChat, ($_maxMessagesInStore * -1), $_maxMessagesInStore);
@@ -101,7 +114,7 @@ if ($res) {
 
   // for each open chat_user update the last read message if
   $res3=$db->query("SELECT fk_chatID, fk_userID, last_read_message_id FROM chats_user");
-  $rows=$res3->fetchAll(Zend_Db::FETCH_ASSOC);
+  $rows=$res3->fetchAll(\Zend_Db::FETCH_ASSOC);
   foreach ($rows as $row) {
     $messageId=$mc->load(\Huhu\Library\MemcacheManager::getKeyChatLastRead($row['fk_userID'], $row['fk_chatID']));
     if ($messageId && $messageId!=$row['last_read_message_id']) {

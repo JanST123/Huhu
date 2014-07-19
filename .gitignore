@@ -1,2 +1,7 @@
 .idea
 vendor
+.DS_Store
+composer.phar
+composer.lock
+application/configs/application.ini
+application.ini
