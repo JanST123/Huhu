@@ -21,9 +21,9 @@ mySQL-Database as a permanent "2nd level"-datastore.
 
 **Please have a look to our [Wiki](https://github.com/JanST123/Huhu/wiki) where you will find some documentation and a tutorial how to setup the backend**
 
-If you want to use the backend on my server (i.e. if you whish to develop the frontend), you can use it on http://we-hu.hu/api/.
+If you want to use the backend on my server (i.e. if you whish to develop the frontend), you can use it on http://api.we-hu.hu/
 
-You can also use the [PHP-Doc](https://we-hu.hu/api/docs/index.html) as a temporary API-Documentaion, but you will also find a complete **API-Documentation** here later.
+You can also use the [PHP-Doc](https://api.we-hu.hu/docs/index.html) as a temporary API-Documentaion, but you will also find a complete **API-Documentation** here later.
 
 The **Frontend** is located in the "[Huhu-Frontend](https://github.com/JanST123/Huhu_Frontend)" repository here on github.
 
